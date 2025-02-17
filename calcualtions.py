@@ -1,47 +1,4 @@
-
-
 import math
-
-
-#takes in a list
-#returns average speed
-def calculate_balloon_speed(coords):
-    """
-    Calculate the balloon's speed based on ECEF coordinates over hourly intervals.
-
-    :param coords: A list of lists, where each sub-list is [x, y, z] for a given hour.
-                   Example: [[x1, y1, z1], [x2, y2, z2], [x3, y3, z3], ...]
-    :return: A dictionary with:
-             - 'average_speed_km_h': average speed (km/h) across all segments
-    """
-    if len(coords) < 2:
-        return 0.0
-
-    segment_speeds = []
-    total_distance_km = 0.0
-
-    # Calculate distance and speed for each consecutive pair of coordinates
-    for i in range(len(coords) - 1):
-        x1, y1, z1 = coords[i]
-        x2, y2, z2 = coords[i + 1]
-
-        # 3D Euclidean distance (meters)
-        dist_m = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2 + (z2 - z1) ** 2)
-
-        # Convert meters to kilometers
-        dist_km = dist_m / 1000.0
-
-        # Time difference is 1 hour per index step
-        speed_km_h = dist_km / 1.0  # km/h
-
-        segment_speeds.append(speed_km_h)
-        total_distance_km += dist_km
-
-    # Average speed = total distance / total time
-    # Total time = (number of segments) * 1 hour = (len(coords) - 1) hours
-    avg_speed_km_h = total_distance_km / (len(coords) - 1)
-
-    return avg_speed_km_h
 
 
 
