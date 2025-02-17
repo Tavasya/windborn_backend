@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment (if you have one)
+venv/
+.venv/
+
+# Environment / local config files
+.env
+.env.local
+
+# Keep an example environment file for others to reference
+!.env.example
+
+# SQLite database / cache files
+*.sqlite
+*.db
+.cache.sqlite
+
+# OS or Editor-specific files
+.DS_Store
+.idea/
+.vscode/
