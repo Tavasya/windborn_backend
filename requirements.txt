@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+openmeteo-requests
+requests-cache
+retry-requests
+httpx
+python-dotenv

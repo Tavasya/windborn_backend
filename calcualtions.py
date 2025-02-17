@@ -191,11 +191,7 @@ def balloon_fall_coords(
 
         if alt_m <= 0:
             # We've hit the ground
-            return {
-                "impact_latitude": lat_deg,
-                "impact_longitude": lon_deg,
-                "time_of_impact_s": time_elapsed
-            }
+            return lat_deg, lon_deg
 
         # 1) Get wind at current altitude (in m/s)
         wind_x, wind_y = (0.0, 0.0)

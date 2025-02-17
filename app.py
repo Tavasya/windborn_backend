@@ -4,7 +4,7 @@ import openmeteo_requests
 import requests_cache
 from retry_requests import retry
 import httpx
-import json
+
 import math
 from datetime import datetime
 from dotenv import load_dotenv
