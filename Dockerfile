@@ -1,17 +1,14 @@
 FROM python:3.11-slim
 
-# Set the working directory
 WORKDIR /app
 
-# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application code
 COPY . .
 
-# Expose the port FastAPI is running on
-EXPOSE 8000
+# Expose 8080 (commonly used on Cloud Run)
+EXPOSE 8080
 
-# Command to run the application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Use $PORT if set, otherwise default to 8080
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "${PORT:-8080}"]

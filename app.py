@@ -4,7 +4,6 @@ import openmeteo_requests
 import requests_cache
 from retry_requests import retry
 import httpx
-
 import math
 from datetime import datetime
 from dotenv import load_dotenv
@@ -12,6 +11,7 @@ import os
 from calcualtions import balloon_fall_coords
 import requests
 import base64
+import uvicorn
 
 
 load_dotenv()
@@ -243,4 +243,9 @@ async def impact_location(x: float, y: float, z: float):
     }
     
     return JSONResponse(content=response_data)
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
