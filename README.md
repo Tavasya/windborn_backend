@@ -7,7 +7,7 @@ This API provides endpoints for tracking weather balloons and predicting their i
 The base URL for the API is:
 
 ```
-https://weather-balloon-api.uc.r.appspot.com/
+https://balloonapi-943888624435.us-west2.run.app/
 ```
 
 ## API Endpoints
@@ -38,18 +38,11 @@ GET /impact?lat={latitude}&lon={longitude}
 
 
 
-## Deployment
-
-The API is deployed on Google Cloud Platform using the following command:
-
-```
-gcloud app deploy
-```
 
 ## API Documentation
 
 The API documentation is available at:
 
 ```
-https://weather-balloon-api.uc.r.appspot.com/docs
+https://balloonapi-943888624435.us-west2.run.app/docs
 ```
