@@ -12,6 +12,14 @@ https://weather-balloon-api.uc.r.appspot.com/
 
 ## API Endpoints
 
+### Get All Weather Balloons Coords
+
+The following endpoint returns all weather balloons coords:
+
+```
+GET /coords_all
+```
+
 ### Get Weather Data
 
 The following endpoint returns weather data for a given latitude and longitude:
