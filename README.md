@@ -22,10 +22,10 @@ GET /coords_all
 
 ### Get Weather Data
 
-The following endpoint returns weather data for a given latitude and longitude:
+The following endpoint returns weather data for given x, y, z coordinates:
 
 ```
-GET /weather?lat={latitude}&lon={longitude}
+GET /weather?x={x}&y={y}&z={z}
 ```
 
 ### Get Impact Location
@@ -33,7 +33,7 @@ GET /weather?lat={latitude}&lon={longitude}
 The following endpoint returns the impact location for a given latitude and longitude:
 
 ```
-GET /impact?lat={latitude}&lon={longitude}
+GET /impact?x={x}&y={y}&z={z}
 ```
 
 

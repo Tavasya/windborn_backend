@@ -13,6 +13,9 @@ import requests
 import base64
 import uvicorn
 import json
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 
 load_dotenv()
@@ -20,6 +23,21 @@ load_dotenv()
 
 
 app = FastAPI()
+
+origins = [
+    "https://balloonapi-943888624435.us-west2.run.app",
+    "https://balloonapi-943888624435.uc.r.appspot.com",
+    "https://*.netlify.app",  # This covers ALL Netlify deployments
+    "http://localhost:*"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,       # Allows specified origins
+    allow_credentials=True,
+    allow_methods=["*"],         # Allows all HTTP methods
+    allow_headers=["*"],         # Allows all headers
+)
 
 
 
